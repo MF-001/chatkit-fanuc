@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "npx --yes next telemetry disable || true"
   },
   "dependencies": {
     "@openai/chatkit-react": ">=1.1.1 <2.0.0",
@@ -15,8 +16,8 @@
     "react-dom": "^19.2.0"
   },
   "optionalDependencies": {
-    "lightningcss-linux-x64-gnu": "1.30.1",
-    "@tailwindcss/oxide-linux-x64-gnu": "4.1.11"
+    "@tailwindcss/oxide-linux-x64-gnu": "4.1.11",
+    "lightningcss-linux-x64-gnu": "1.30.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,6 +28,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "5.9.3"
   }
 }

@@ -52,6 +52,25 @@ npm run dev
 
 Visit `http://localhost:3000` and start chatting. Use the prompts on the start screen to verify your workflow connection, then customize the UI or prompt list in [`lib/config.ts`](lib/config.ts) and [`components/ChatKitPanel.tsx`](components/ChatKitPanel.tsx).
 
+### Run using Docker (recommended — no host installs)
+
+This repo includes a `Dockerfile` and `docker-compose.yml` so you can run the app entirely inside Docker. Copy `.env.example` to `.env` and fill in your secrets first:
+
+```bash
+cp .env.example .env
+# edit .env and add your keys
+```
+
+Start the app with docker-compose (development PoC):
+
+```bash
+cp .env.example .env
+docker compose up --build
+```
+
+The app will be available at `http://localhost:${PORT:-3000}`. The compose file mounts the project directory so code changes are reflected immediately in development. If you later want a production image, there are notes above about splitting dev/dev-prod workflows — for now this setup focuses on a simple dev PoC.
+
+
 ### 5. Deploy your app
 
 ```bash
